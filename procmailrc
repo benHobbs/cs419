@@ -1,0 +1,26 @@
+# A default .procmailrc file
+
+# Include the standard spam filter
+INCLUDERC=/usr/local/etc/procmail/standard.rc
+
+####################################################
+# (Optionally) Add your own rules after this line
+####################################################
+
+####################################################
+# Setup log file to error check .procmailrc
+####################################################
+LOGFILE=
+VERBOSE=YES
+LOGABSTRACT=YES
+
+####################################################
+# Filter emails and pipe to python script
+####################################################
+:0 fw
+* ^From:.*
+####################################################
+# Pipe output from filter to python script
+# path_to_interpreter path_to_python script
+####################################################
+| /usr/bin/python ~/
